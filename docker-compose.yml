@@ -1,0 +1,18 @@
+# Compose fileの書き方は以下を参照
+# https://docs.docker.com/compose/compose-file/compose-file-v3/
+version: '3.9'
+
+services:
+  app:
+      container_name: app
+      build:
+        context: ./app
+        dockerfile: Dockerfile
+      ports:
+        - '3000:3000'  # ホストとコンテナ内のReactの起動ポートを接続
+      volumes:
+        - ./app:/usr/src/app:cached  # ホストのappディレクトリをマウント
+        - /usr/src/app/node_modules  # 上書きされないようにボリュームを作成
+      # working_dir: /usr/src/app
+      # command: ["npm", "start"]
+      tty: true
