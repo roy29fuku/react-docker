@@ -13,6 +13,4 @@ services:
       volumes:
         - ./app:/usr/src/app:cached  # ホストのappディレクトリをマウント
         - /usr/src/app/node_modules  # 上書きされないようにボリュームを作成
-      # working_dir: /usr/src/app
-      # command: ["npm", "start"]
       tty: true
