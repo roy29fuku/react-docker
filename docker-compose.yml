@@ -1,6 +1,4 @@
-# Compose fileの書き方は以下を参照
-# https://docs.docker.com/compose/compose-file/compose-file-v3/
-version: '3.9'
+version: '3.6'
 
 services:
   app:
